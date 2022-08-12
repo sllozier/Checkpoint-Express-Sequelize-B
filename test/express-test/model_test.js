@@ -9,17 +9,17 @@ describe('Todo model', function () {
     Todos.reset();
   });
 
-  describe('`listPeople` and `add`', function () {
-    xit('initially returns an empty array', function () {
+  describe.only('`listPeople` and `add`', function () {
+    it('initially returns an empty array', function () {
       expect(Todos.listPeople()).to.eql([]);
     });
 
-    xit('lists people after they have todos added', function () {
+    it('lists people after they have todos added', function () {
       Todos.add('zeke', { content: 'clean room' });
       expect(Todos.listPeople()).to.eql(['zeke']);
     });
 
-    xit('handles multiple people with multiple todos', function () {
+    it('handles multiple people with multiple todos', function () {
       Todos.add('zeke', { content: 'clean room' });
       Todos.add('zeke', { content: 'write mom' });
       expect(Todos.listPeople()).to.eql(['zeke']);
